@@ -6,6 +6,7 @@
 package burdabar.programmerscalculator.model.calculator.operations.mathoperations;
 
 import burdabar.programmerscalculator.model.calculator.CalculatorModel;
+import burdabar.programmerscalculator.model.calculator.operations.CalculatorOperationException;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.Before;
@@ -59,7 +60,7 @@ public class ModuloOperationImplTest {
                 .setCurrentValue(longCaptor.capture());
     }
     
-    @Test ( expected = IllegalArgumentException.class)
+    @Test ( expected = CalculatorOperationException.class)
     public void executeWithZeroShouldThrowException()
     {
         moduloOperation = new ModuloOperationImpl(0, modelMock);
