@@ -7,7 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-
+//Main application - Calculator
 public class MainApp extends Application {
 
     @Override
