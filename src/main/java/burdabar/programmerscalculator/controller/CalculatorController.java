@@ -10,7 +10,6 @@ import javafx.scene.control.Label;
 
 public class CalculatorController implements Initializable {
     
-    
     @FXML
     private Button shiftToRollButton;
     @FXML
@@ -93,10 +92,69 @@ public class CalculatorController implements Initializable {
     private Label binField;
     @FXML
     private Label calcField;
+    @FXML
+    private Button clearButton;
     
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
+    
+    private void zeroButtonCilck(ActionEvent event) {
+        calcField.setText("0");
+    }
+
+    @FXML
+    private void handleDigitAction(ActionEvent event) {
+        String digit = ((Button) event.getSource()).getText();
+        String oldText = calcField.getText();
+        String newText = oldText + digit;
+        calcField.setText(newText);
+    }
+
+    @FXML
+    private void handleAddOperation(ActionEvent event) {
+        String currentText = calcField.getText();
+        double currentNumber = Double.parseDouble(currentText);
+        // Use ADD method from class Calculator.java
+    }
+
+    @FXML
+    private void handleEqualOperation(ActionEvent event) {
+        // Equal
+    }
+
+    @FXML
+    private void handleClearAction(ActionEvent event) {
+        // C Button - Clear display
+    }
+
+    @FXML
+    private void handleDivideOperation(ActionEvent event) {
+        // Divide
+    }
+
+    @FXML
+    private void handleMultiplyOperation(ActionEvent event) {
+        // Multiply
+    }
+
+    @FXML
+    private void handleMinusOperation(ActionEvent event) {
+        // Substract
+    }
+
+    @FXML
+    private void handleDotAction() {
+        // Dot
+        String oldText = calcField.getText();
+        String newText = oldText;
+        if( digit.contains(".") ) {
+            // Nothing To Do
+        } else {
+            newText = oldText + ".";
+        }
+        calcField.setText(newText);
+    }
 }
