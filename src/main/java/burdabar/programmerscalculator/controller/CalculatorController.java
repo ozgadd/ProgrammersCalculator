@@ -150,11 +150,6 @@ public class CalculatorController implements Initializable {
         // Dot
         String oldText = calcField.getText();
         String newText = oldText;
-        if( digit.contains(".") ) {
-            // Nothing To Do
-        } else {
-            newText = oldText + ".";
-        }
         calcField.setText(newText);
     }
 }
